@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import CreateArea from "./CreateArea";
 
 function App() {
+  const [allNotes, setAllNotes] = useState([
+    {
+      title: "",
+      content: "",
+    },
+  ]);
+
   return (
     <div>
-      <h1>Hello World!</h1>
+      <Header />
+      <CreateArea />
+      <Note key={1} title="Note title" content="Note content" />
+      <Footer />
     </div>
   );
 }
